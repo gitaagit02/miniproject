@@ -1,0 +1,65 @@
+<div class="button-start">
+	<button type="button" (click)="btnPlayerOne()">START PLAYER 1</button><br>
+	<button type="button" (click)="btnPlayerTwo()">START PLAYER 2</button>
+</div>
+
+<div class="score-board">
+	<div class="badge" id="user-label">user : {{userSelected}}</div>
+	<div class="badge" id="comp-label">comp : {{compSelected}}</div>
+	<span id="user-score">{{userScore}}</span>:<span id="comp-score">{{compScore}}</span>
+</div>
+
+<div class="result">
+	<p *ngIf="status">{{userSelected}} {{action}} {{compSelected}}{{status}} </p>
+</div>
+
+<div class="choices1" *ngIf="isplayerOne == true">
+	<div class="choice" id="rock">
+		<img src="../assets/images/rock.png" (click)='userPick("rock")'>
+	</div>
+	
+	<div class="choice" id="paper">
+		<img src="../assets/images/paper.png" (click)='userPick("paper")'>
+	</div>
+	
+	<div class="choice" id="scissors">
+		<img src="../assets/images/scissors.png" (click)='userPick("scissors")'>
+	</div>
+</div>
+
+<div class="choices2" *ngIf="isplayerTwo == true">
+	<div class="choice" id="rock">
+		<img src="../assets/images/rock.png" (click)='userPick("rock")'>
+	</div>
+
+	<div class="choice" id="paper">
+		<img src="../assets/images/paper.png" (click)='userPick("paper")'>
+	</div>
+
+	<div class="choice" id="scissors">
+		<img src="../assets/images/scissors.png" (click)='userPick("scissors")'>
+	</div>
+</div>
+
+<p id="action-message" *ngIf="!status">Come on, start to make your move</p>
+<p id="action-message" *ngIf="status">Wait... be patient</p>
+
+
+<div class="squirtle">
+	<div class="tail"></div>
+	<div class="body">
+		<div class="stomach"></div>
+		<div class="shell"></div>
+	</div>
+	<div class="head">
+		<div class="eye"></div>
+		<div class="eye"></div>
+		<div class="mouth"></div>
+	</div>
+	<div class="leg back"></div>
+	<div class="leg"></div>
+	<div class="arm back"></div>
+	<div class="arm"></div>
+</div>
+
+<router-outlet></router-outlet>
